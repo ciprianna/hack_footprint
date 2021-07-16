@@ -20,11 +20,17 @@ const Trees = () => {
       const button = p5.createButton('submit');
       button.position(p5.width/2, 140);
       button.mousePressed(() => {
+        p5.treeAmount = 0;
+        p5.treeCount = 0;
+        if(p5.total) {
+          p5.total.remove();
+        }
+
         p5.treeAmount = Math.round(treeConversion(input.value()));
         console.log(p5.treeAmount);
         p5.treeCount = 0;
         p5.total = p5.createElement('h2', p5.treeCount);
-        p5.total.position(p5.width/3, p5.height/2);
+        p5.total.position((p5.width * .8), p5.height/2);
       });
 
       const greeting = p5.createElement('p', 'How many kg of C02?');
@@ -34,7 +40,7 @@ const Trees = () => {
       p5.textSize(50);
 
       p5.createCanvas(1000, 1000).parent(canvasParentRef);
-      system = new System(p5, p5.createVector(p5.width/3, p5.height/3), treeAmount);
+      system = new System(p5, p5.createVector(p5.width/2, p5.height/3), treeAmount);
     };
 
     const draw = (p5) => {
