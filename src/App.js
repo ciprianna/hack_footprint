@@ -5,7 +5,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        WPE Footprint
+        Carbon Equivalencies
+        <br />
+        How many seedlings will need to grow for 10 years?
+        <br />
+        <sub>Source: <a href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator/">EPA Greenhouse Gas Equivalencies Calculator</a></sub>
       </header>
 
       <Trees />
